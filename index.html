@@ -1,14 +1,18 @@
 <!doctype html>
 <html lang="de">
-<head>
+  <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Milan Antik – Portfolio</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
+  <header class="site-header">
     <nav class="nav" aria-label="Hauptnavigation">
+      <a class="brand" href="#home" aria-label="Logo/Monogramm">
+        <span class="brand__monogram">MA</span>
+      </a>
       <ul class="nav__list">
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -22,41 +26,47 @@
 
   <main>
     <section id="home" class="section section--home" aria-label="Home">
-      <div class="container">
-        <h1 class="hero__title">Milan Antik</h1>
-        <p class="hero__subtitle">Business Informatics Student @ BFH</p>
+      <div id="tsparticles" class="bg-stars" aria-hidden="true"></div>
+      <div class="hero">
+        <div class="hero__left">
+          <h1 class="hero__title">Milan Antik</h1>
+          <p class="hero__subtitle">Business Informatics Student @ BFH</p>
+        </div>
+        <div class="hero__right">
+          <img class="hero__avatar" src="assets/img/profile.jpg" alt="Portrait von Milan Antik">
+        </div>
       </div>
     </section>
 
-    <section id="about" class="section" aria-label="About">
+    <section id="about" class="section section--light" aria-label="About">
       <div class="container">
         <h2>About</h2>
         <p>Platzhalter: Kurze Beschreibung zu dir.</p>
       </div>
     </section>
 
-    <section id="projects" class="section" aria-label="Projects">
+    <section id="projects" class="section section--light" aria-label="Projects">
       <div class="container">
         <h2>Projects</h2>
         <p>Platzhalter: Projekte werden hier vorgestellt.</p>
       </div>
     </section>
 
-    <section id="skills" class="section" aria-label="Skills">
+    <section id="skills" class="section section--light" aria-label="Skills">
       <div class="container">
         <h2>Skills</h2>
         <p>Platzhalter: Fähigkeiten und Technologien.</p>
       </div>
     </section>
 
-    <section id="cv" class="section" aria-label="CV">
+    <section id="cv" class="section section--light" aria-label="CV">
       <div class="container">
         <h2>CV</h2>
         <p>Platzhalter: Link oder Kurzbeschreibung des Lebenslaufs.</p>
       </div>
     </section>
 
-    <section id="contact" class="section" aria-label="Contact">
+    <section id="contact" class="section section--light" aria-label="Contact">
       <div class="container">
         <h2>Contact</h2>
         <p>Platzhalter: Kontaktmöglichkeiten.</p>
@@ -70,6 +80,7 @@
     </div>
   </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@3/tsparticles.bundle.min.js" defer></script>
   <script src="assets/js/script.js" defer></script>
 </body>
 </html>
