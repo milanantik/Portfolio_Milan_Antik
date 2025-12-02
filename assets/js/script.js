@@ -312,3 +312,38 @@
 
   document.addEventListener("DOMContentLoaded", start);
 })();
+
+// Animate skill bars when they enter viewport
+document.addEventListener("DOMContentLoaded", () => {
+  const bars = document.querySelectorAll(".skill-bar");
+  if (!bars.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          const style = getComputedStyle(el);
+          const target = parseFloat(el.style.getPropertyValue("--p")) || 0;
+          // Animate --p from 0 to target using a small JS tween
+          const duration = 700;
+          const start = performance.now();
+          function tick(ts) {
+            const t = Math.min(1, (ts - start) / duration);
+            const eased = t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; // easeInOutQuad
+            el.style.setProperty("--p", String(target * eased));
+            if (t < 1) requestAnimationFrame(tick);
+          }
+          // Start from 0 for visual effect
+          el.style.setProperty("--p", "0");
+          requestAnimationFrame(tick);
+
+          observer.unobserve(el);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  bars.forEach((b) => observer.observe(b));
+});
