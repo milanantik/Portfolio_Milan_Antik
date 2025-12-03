@@ -476,3 +476,94 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+/* =====================
+   CV Timeline Styles
+   ===================== */
+.timeline {
+  position: relative;
+  width: min(90%, var(--container));
+  margin: 0 auto;
+  padding: 1rem 0 3rem;
+}
+/* Center axis */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  transform: translateX(-50%);
+  background: #e5e7eb;
+}
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* left, right of axis */
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+.timeline__marker {
+  position: absolute;
+  left: 50%;
+  top: 0.25rem;
+  transform: translate(-50%, 0);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px #fff, 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+/* Cards alternate sides using nth-child */
+.timeline__item:nth-child(odd) .timeline__card {
+  grid-column: 1; /* left side */
+}
+.timeline__item:nth-child(even) .timeline__card {
+  grid-column: 2; /* right side */
+}
+.timeline__card {
+  background: #f7f3ff; /* pastel violet to stand out gently */
+  border-radius: 16px;
+  box-shadow: 0 8px 18px rgba(157, 78, 221, 0.08);
+  border: 1px solid #ece7ff;
+  padding: 1.6rem 1.7rem 1.5rem; /* more spacious */
+}
+.timeline__date {
+  margin: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+.timeline__title {
+  margin: 0.35rem 0 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.timeline__desc {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+/* Responsive: stack items on small screens */
+@media (max-width: 900px) {
+  .timeline::before {
+    left: 1rem; /* push axis to the left */
+    transform: none;
+  }
+  .timeline__item {
+    grid-template-columns: 1fr; /* single column */
+    margin: 2rem 0;
+  }
+  .timeline__item .timeline__card {
+    grid-column: 1;
+  }
+  .timeline__marker {
+    left: 1rem;
+    transform: translateX(0);
+  }
+}
