@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Milan Antik – Portfolio</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23240e3d'/%3E%3Ctext x='50%' y='52%' font-size='32' font-family='Georgia' fill='%23c77dff' text-anchor='middle' dy='.1em'%3EMA%3C/text%3E%3C/svg%3E"
+    />
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css" />
@@ -18,7 +22,7 @@
   <body>
     <!-- Header -->
     <header class="site-header">
-      <nav class="nav" aria-label="Hauptnavigation">
+      <nav class="nav" aria-label="Hauptnavigation" role="navigation">
         <span class="brand__monogram" aria-hidden="false">MA</span>
 
         <ul class="nav__list">
@@ -26,7 +30,7 @@
           <li><a href="#projects">Projects</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#cv">CV</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#hobby">Hobby</a></li>
         </ul>
       </nav>
     </header>
@@ -430,19 +434,81 @@
         </div>
       </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="section section--light" aria-label="Contact">
+      <!-- Hobby Section -->
+      <section id="hobby" class="section section--light" aria-label="Hobby">
         <div class="container">
-          <h2>Contact</h2>
-          <p>Platzhalter: Kontaktmöglichkeiten.</p>
+          <h2 class="projects__title">Hobby</h2>
+          <p class="hobby__intro">
+            In my free time, I like to do sports and ski, play chess, or listen
+            to old hits like this one here.
+          </p>
+
+          <!-- Spotify Card -->
+          <div class="spotify-card">
+            <div class="spotify-card__embed">
+              <iframe
+                class="spotify-embed"
+                src="https://open.spotify.com/embed/track/5ChkMS8OtdzJeqyybCc9R5?utm_source=generator"
+                title="Spotify Embed: Simply The Best"
+                allowfullscreen
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="spotify-card__info">
+              <div
+                id="spotify-loading"
+                class="spotify-loading"
+                role="status"
+                aria-live="polite"
+              >
+                Loading track info...
+              </div>
+              <div
+                id="spotify-error"
+                class="spotify-error is-hidden"
+                role="status"
+                aria-live="assertive"
+              >
+                Could not load track info.
+              </div>
+              <div id="spotify-content" class="is-hidden">
+                <h3 id="spotify-title" class="spotify-title"></h3>
+                <p id="spotify-artist" class="spotify-artist"></p>
+                <p id="spotify-album" class="spotify-album"></p>
+                <p id="spotify-release-date" class="spotify-release-date"></p>
+                <p id="spotify-duration" class="spotify-duration"></p>
+                <a
+                  id="spotify-link"
+                  class="spotify-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open in Spotify
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="site-footer">
       <div class="container">
-        <p>&copy; <span id="year">2025</span> Milan Antik</p>
+        <div class="footer__content">
+          <div class="footer__contact">
+            <h3 class="footer__contact-title">Contact Me</h3>
+            <p class="footer__email">
+              <a href="mailto:milan.antik02@gmail.com"
+                >milan.antik02@gmail.com</a
+              >
+            </p>
+          </div>
+          <div class="footer__copyright">
+            <p>&copy; <span id="year">2025</span> Milan Antik</p>
+          </div>
+        </div>
       </div>
     </footer>
 
